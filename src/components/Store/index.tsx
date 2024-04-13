@@ -1,6 +1,6 @@
 import { Box, HStack, ListItem, OrderedList } from '@chakra-ui/react'
 import React from 'react'
-import PaginatedApi from '../breadcrumb/Table/table'
+import PaginatedApi from '../Table'
 
 const index = () => {
 
@@ -22,7 +22,7 @@ const index = () => {
             <Box w={'30%'} justifyContent={'center'}>
                 <OrderedList>
                     {array.map((item, key) => (
-                        <ListItem>{item}</ListItem>
+                        <ListItem key={key}>{item}</ListItem>
                     ))}
 
                 </OrderedList>

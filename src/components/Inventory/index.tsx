@@ -1,6 +1,6 @@
 import React from 'react'
-import PaginatedApi from '../breadcrumb/Table/table'
 import { Box, Flex } from '@chakra-ui/react'
+import PaginatedApi from '../Table'
 
 const index = () => {
   return (

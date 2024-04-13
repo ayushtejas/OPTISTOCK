@@ -6,9 +6,12 @@ import { Box, Heading, Text, VStack, Image, Img, HStack } from '@chakra-ui/react
 import { GetServerSideProps } from 'next';
 import React from 'react';
 
-const Insight = ({ insightName }) => {
+interface Props {
+    insightName:string
+}
+const Insight = ({ insightName }:Props) => {
 
-    const Headers = {
+    const Headers: { [key: string]: string } = {
         'Charts': 'Charts',
         'Inventory': 'Inventory/ Distribution Channel Space Utilization',
         'Stores': 'Store List',
@@ -16,7 +19,7 @@ const Insight = ({ insightName }) => {
         'Production Forecast': 'Production Forecast'
     }
 
-    const Descriptions = {
+    const Descriptions: { [key: string]: string }  = {
         'Charts': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nonne merninisti licere mihi ista probare, quae sunt a te dicta? Huius, Lyco, oratione locuples, rebus ipsis ielunior. Quae cum essent dicta, discessimus.',
         'Inventory': 'Track and visualize inventory space utilization. Higher utilization (within limits) saves space and optimizes storage. Click for details.',
         'Stores': 'Explore comprehensive details on list of store locations and their respective capacities on floor',
