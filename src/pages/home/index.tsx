@@ -40,7 +40,7 @@ const index = () => {
             textAlign: 'center',
         }}
     >
-        <Heading size="xl" color="blue.500" mb={4}>
+        <Heading size="xl" color="white" mb={4}>
             OPTISTOCK
         </Heading>
         <Text color="gray.700" fontSize="lg" mb={8}>

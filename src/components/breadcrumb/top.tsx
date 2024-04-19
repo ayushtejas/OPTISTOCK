@@ -3,24 +3,28 @@ import { FaChevronRight } from "react-icons/fa";
 import React from 'react'
 import { breadCrumbsProps } from '@/src/constants/breadcrumbs';
 
-interface props{
+interface props {
     breadcrumbs: Array<breadCrumbsProps>
 }
-export const top = ({breadcrumbs}:props) => {
-  return (
-    <Breadcrumb spacing='8px' separator={<FaChevronRight color='gray.500' />}>
+const Top = ({ breadcrumbs }: props) => {
+    return (
+        <Breadcrumb ml={6} spacing='8px' separator={<FaChevronRight color='gray.500' />}>
 
-  <BreadcrumbItem>
-    <BreadcrumbLink href='#'>Home</BreadcrumbLink>
-  </BreadcrumbItem>
+            <BreadcrumbItem >
+                <BreadcrumbLink href='/home'>Home</BreadcrumbLink>
+            </BreadcrumbItem>
+            {Object.keys(breadcrumbs).map((item, value) => (
+                <BreadcrumbItem isCurrentPage={`${breadcrumbs[item]['isCurrent']}` === 'true'}>
+                    <BreadcrumbLink color={(`${breadcrumbs[item]['isCurrent']}` === 'false') ? 'black' : 'gray'} href={`${breadcrumbs[item]['link']}`}>{breadcrumbs[item]['name']}</BreadcrumbLink>
+                </BreadcrumbItem>
+            ))}
 
-  <BreadcrumbItem>
-    <BreadcrumbLink href='#'>About</BreadcrumbLink>
-  </BreadcrumbItem>
 
-  <BreadcrumbItem isCurrentPage>
+            {/* <BreadcrumbItem isCurrentPage>
     <BreadcrumbLink href='#'>Contact</BreadcrumbLink>
-  </BreadcrumbItem>
-</Breadcrumb>
-  )
+  </BreadcrumbItem> */}
+        </Breadcrumb>
+    )
 }
+
+export default Top;
