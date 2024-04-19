@@ -42,7 +42,7 @@ const Insight = ({ insightName }:Props) => {
             {insightName ==='Stores' &&
             (<Store/>)}
             {insightName === 'Sales' && (
-                <Sales id={`${insightName}`}/>
+                <Sales/>
             )}
             <Box sx={{ position: 'absolute', bottom: '0', left: '50%', transform: 'translateX(-50%)', width: '100%' }}>
                 <HStack px={'4'} pb={0} spacing={4} h={'150px'} mx={2}>

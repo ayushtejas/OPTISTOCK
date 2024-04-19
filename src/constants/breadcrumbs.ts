@@ -1,5 +1,5 @@
 export interface breadCrumbsProps{
     name: string,
-    route: string,
+    link: string,
     isCurrent: Boolean
 }
